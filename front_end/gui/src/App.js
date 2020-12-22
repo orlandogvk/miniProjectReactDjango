@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import CustomLayout from './containers/Layout';
-import ArticleList from './containers/ArticleListView';
+import { BrowserRouter as Router } from 'react-router-dom';
+import BaseRouter from './routes';
 
 class App extends Component {
-  render(){
-    return(
+  render() {
+    return (
       <div className="app">
-        <CustomLayout>
-          <ArticleList/>
-        </CustomLayout>
+        <Router>
+          <CustomLayout>
+            <BaseRouter />
+          </CustomLayout>
+        </Router>
       </div>
     )
   }
